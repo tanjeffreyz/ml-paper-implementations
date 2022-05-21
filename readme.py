@@ -28,7 +28,7 @@ class Readme:
         toc_start, toc_end = load_template('toc')
         contents += toc_start
         for i, key in enumerate(CATEGORIES):
-            classes = 'list-group' + (' mt-3' if i != 0 else '')
+            classes = 'list-group' + (' mt-4' if i != 0 else '')
             contents += [
                 f'<ul class="{classes}">',
                 f'<li class="list-group-item list-group-item-primary">{key}</li>'
@@ -41,9 +41,7 @@ class Readme:
             contents.append('</ul>')
         contents += toc_end
 
-        # Repositories
-        # carousel_template = load_template('carousel')[0]
-        # category_start, category_end = load_template('category')
+        # Categories and repositories
         for key in CATEGORIES:
             category_start, category_end = fill_template(
                 'category',
@@ -53,6 +51,15 @@ class Readme:
                 }
             )
             contents += category_start
+            for repo in self.REPOS[key]:
+                contents += fill_template(
+                    'repository',
+                    variables={
+                        '__TITLE__': repo.get('header', {}).get('title', '')
+                    }
+                )[0]
+
+
             contents += category_end
 
 
@@ -74,6 +81,8 @@ class Readme:
                         else:
                             next_indent += 1
                         first = False
+                    elif line[j] == '/' and j < len(line) - 1 and line[j+1] == '>':
+                        next_indent -= 1
             contents[i] = ' ' * 4 * max(0, indent) + line
             indent = next_indent
 

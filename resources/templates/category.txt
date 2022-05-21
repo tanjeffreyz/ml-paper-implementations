@@ -3,11 +3,6 @@
         <div class="col"></div>
         <div class="col-8 clamped-col">
             <h2>__CATEGORY_NAME__</h2>
-            <p>
-                Below is a collection of all my implementations of various machine learning papers.
-                This webpage automatically updates once a day using GitHub Actions, so be sure to check
-                back for more!
-            </p>
 
             __DIVIDER__
 

@@ -1,0 +1,8 @@
+<div>
+    <h4 class="in-line">__TITLE__</h4>
+    <span class="in-line icon" style="position: relative; top: 2px; left: 5px">
+        <a href="https://github.com/tanjeffreyz">
+            <img src="resources/github-icon.png" width="32px" />
+        </a>
+    </span>
+</div>

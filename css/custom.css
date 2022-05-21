@@ -48,3 +48,12 @@ li a {
     display: block;
     width: 100%;
 }
+
+.in-line {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.icon:hover {
+    transform: scale(1.15);
+}
