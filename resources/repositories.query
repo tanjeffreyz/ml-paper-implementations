@@ -25,6 +25,9 @@
         collaborators {
           totalCount
         }
+        defaultBranchRef {
+          name
+        }
       }
     }
     repositoriesContributedTo(
@@ -51,6 +54,9 @@
         forkCount
         collaborators {
           totalCount
+        }
+        defaultBranchRef {
+          name
         }
       }
     }
