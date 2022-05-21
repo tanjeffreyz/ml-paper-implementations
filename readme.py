@@ -42,6 +42,19 @@ class Readme:
         contents += toc_end
 
         # Repositories
+        # carousel_template = load_template('carousel')[0]
+        # category_start, category_end = load_template('category')
+        for key in CATEGORIES:
+            category_start, category_end = fill_template(
+                'category',
+                variables={
+                    '__CATEGORY_ANCHOR__': get_anchor(key) + '-category',
+                    '__CATEGORY_NAME__': key
+                }
+            )
+            contents += category_start
+            contents += category_end
+
 
         contents += index_end       # Finish index
 
@@ -88,4 +101,13 @@ def load_template(name):
                 lines = []
     if len(lines) > 0:
         blocks.append(lines)
+    return blocks
+
+
+def fill_template(name, variables=dict()):
+    blocks = load_template(name)
+    for block in blocks:
+        for i in range(len(block)):
+            for var in variables:
+                block[i] = block[i].replace(var, variables[var])
     return blocks
