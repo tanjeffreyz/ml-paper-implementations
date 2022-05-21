@@ -1,0 +1,13 @@
+<div id="table-of-contents" class="container-fluid block">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-8 clamped-col">
+            <h2>Table of Contents</h2>
+
+            __DIVIDER__
+
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+

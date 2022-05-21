@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light ps-5 pe-5">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#intro">ML Paper Implementations</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-nowrap" href="#table-of-contents">Table of Contents</a>
+            </li>
+            <li class="nav-item ms-3">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        __DIVIDER__
+
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item ms-3">
+                <a href="https://github.com/tanjeffreyz/ml-paper-implementations">
+                    <img class="nav-link" src="resources/github-icon.png" height="40px" title="View on GitHub" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

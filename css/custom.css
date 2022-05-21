@@ -1,0 +1,50 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.rounded {
+    border-radius: 0.75rem !important;
+}
+
+body {
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.block:before {
+    height: 75px;
+    content: "";
+    display: block;
+}
+
+h1 {
+    padding-bottom: 20px;
+}
+
+p {
+    padding-top: 10px;
+}
+
+.carousel-caption {
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    padding-bottom: 2.25rem;
+    background-color: rgba(0, 0, 0, 0.667);
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}
+
+.clamped-col {
+    max-width: 900px;
+}
+
+li a {
+    display: block;
+    width: 100%;
+}

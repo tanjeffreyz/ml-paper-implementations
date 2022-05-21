@@ -3,6 +3,7 @@ import asyncio
 import urllib.error
 from urllib.request import urlopen
 from client import Client
+from readme import Readme
 
 
 class Main:
@@ -14,7 +15,9 @@ class Main:
 
     async def run(self):
         repos = await self.get_all_repos()
-        print(self.filter_repos(repos))
+        filtered = self.filter_repos(repos)
+        readme = Readme(filtered)
+        readme.generate()
 
     async def get_all_repos(self):
         """Returns all public repositories the user contributed to."""
@@ -49,24 +52,24 @@ class Main:
     def filter_repos(self, repos):
         """Filters repositories and keeps those with tags in SELF.TAGS"""
 
+        print('\n[~] Parsing repositories:')
         filtered = {}
         for r in repos:
             name = r.get('name', '')
             owner = r.get('owner', {}).get('login', '')
             default_branch = r.get('defaultBranchRef', {}).get('name', '')
-            print(name, owner, default_branch)
             url = f'https://raw.githubusercontent.com/{owner}/{name}/{default_branch}/README.md'
             try:
                 contents = [x.decode('utf-8').strip() for x in urlopen(url)]
                 header = parse_header(contents)
                 if header is not None and any(x in header['tags'] for x in self.TAGS):
-                    r['tags'] = header['tags']
+                    r['header'] = header
                     category = header['category']
                     if category not in filtered:
                         filtered[category] = []
                     filtered[category].append(r)
             except urllib.error.HTTPError:
-                print(f"\n[!] Invalid URL: '{url}'")
+                print(f" !  Invalid URL: '{url}'")
         return filtered
 
     async def get_repos_page(self, owned_cursor, contrib_cursor):
@@ -91,6 +94,8 @@ def parse_header(contents):
     # Parse header for repository information
     header = {
         'tags': None,
+        'title': None,
+        'authors': None,
         'category': None
     }
     for line in contents[start:end]:
@@ -98,10 +103,12 @@ def parse_header(contents):
         if len(args) == 2:
             key = args[0].strip().lower()
             value = args[1].strip()
-            if key == 'tags':
-                header['tags'] = {x.strip().lower() for x in value.split(',')}
-            elif key == 'category':
-                header['category'] = value
+            if key in {'tags'}:
+                header[key] = {x.strip().lower() for x in value.split(',')}
+            elif key in {'category', 'title'}:
+                header[key] = value
+            elif key in {'authors'}:
+                header[key] = [x.strip() for x in value.split(',')]
     if all(x is not None for x in header.values()):
         return header
 
