@@ -83,3 +83,7 @@ li a {
 .side-bar-width {
     max-width: 350px;
 }
+
+.clamped-col {
+    max-width: 1000px;
+}

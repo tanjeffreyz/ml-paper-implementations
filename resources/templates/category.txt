@@ -1,7 +1,7 @@
 <div id="__CATEGORY_ANCHOR__" class="container-fluid block">
     <div class="row">
         <div class="col"></div>
-        <div class="col-8">
+        <div class="col-9 clamped-col">
             <h2>__CATEGORY_NAME__</h2>
 
             __DIVIDER__
