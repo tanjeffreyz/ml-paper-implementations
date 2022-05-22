@@ -1,7 +1,4 @@
-import os
-
-
-IGNORED_TAGS = ('meta', 'link', '!DOCTYPE', 'br', 'hr')
+from utils import indent, get_anchor, load_template, fill_template
 
 
 class Readme:
@@ -95,9 +92,9 @@ class Readme:
                     }
                 )
                 for i, path in enumerate(images):
-                    current = 'aria-current="true" ' if i == 0 else ''
+                    current = 'class="active" aria-current="true" ' if i == 0 else ''
                     indicator = f'<button type="button" data-bs-target="#{carousel_id}" data-bs-slide-to="{i}" ' \
-                                f'class="active" {current}aria-label="Slide {i + 1}"></button>'
+                                f'{current}aria-label="Slide {i + 1}"></button>'
                     indicators.append(indicator)
 
                     active = ' active' if i == 0 else ''
@@ -127,57 +124,3 @@ class Readme:
         with open('index.html', 'w') as file:
             file.write('\n'.join(contents))
         print(' -  Saved result to README.md')
-
-
-def indent(contents):
-    """Mutatively indents each line in CONTENTS."""
-
-    indent = 0
-    for i in range(len(contents)):
-        line = contents[i]
-        next_indent = indent
-        if not any(line.startswith(f'<{x}') for x in IGNORED_TAGS):
-            first = True
-            for j in range(len(line)):
-                if line[j] == '<':
-                    if j < len(line) - 1 and line[j + 1] == '/':
-                        if first:
-                            indent -= 1  # If '</' comes first, decrease current indent
-                        next_indent -= 1
-                    else:
-                        next_indent += 1
-                    first = False
-                elif line[j] == '/' and j < len(line) - 1 and line[j + 1] == '>':
-                    next_indent -= 1
-        contents[i] = ' ' * 4 * max(0, indent) + line
-        indent = next_indent
-
-
-def get_anchor(string):
-    return string.lower().replace(' ', '-')
-
-
-def load_template(name):
-    blocks = []
-    lines = []
-    with open(os.path.join('resources', 'templates', f'{name}.txt')) as file:
-        for line in file.readlines():
-            line = line.strip()
-            if line != '__DIVIDER__':
-                if line:
-                    lines.append(line)
-            else:
-                blocks.append(lines)
-                lines = []
-    if len(lines) > 0:
-        blocks.append(lines)
-    return blocks
-
-
-def fill_template(name, variables=dict()):
-    blocks = load_template(name)
-    for block in blocks:
-        for i in range(len(block)):
-            for var in variables:
-                block[i] = block[i].replace(var, variables[var])
-    return blocks

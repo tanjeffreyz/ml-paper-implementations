@@ -4,6 +4,7 @@ import urllib.error
 from urllib.request import urlopen
 from client import Client
 from readme import Readme
+from utils import parse_header
 
 
 class Main:
@@ -80,37 +81,6 @@ class Main:
         query = query.replace('__OWNED_CURSOR__', owned_cursor)
         query = query.replace('__CONTRIBUTED_CURSOR__', contrib_cursor)
         return await self.CLIENT.request(self.TARGET, query)
-
-
-def parse_header(contents):
-    i = 0
-    while i < len(contents) and '<!--' not in contents[i]:
-        i += 1
-    start = i + 1
-    while i < len(contents) and '-->' not in contents[i]:
-        i += 1
-    end = i
-
-    # Parse header for repository information
-    header = {
-        'tags': None,
-        'title': None,
-        'images': None,
-        'category': None
-    }
-    for line in contents[start:end]:
-        args = line.split(':')
-        if len(args) == 2:
-            key = args[0].strip().lower()
-            value = args[1].strip()
-            if key in {'tags'}:
-                header[key] = {x.strip().lower() for x in value.split(',')}
-            elif key in {'category', 'title'}:
-                header[key] = value
-            elif key in {'images'}:
-                header[key] = [x.strip() for x in value.split(',')]
-    if all(x is not None for x in header.values()):
-        return header
 
 
 if __name__ == '__main__':
