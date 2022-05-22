@@ -92,3 +92,7 @@ li a {
     background-color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0;
 }
+
+.carousel .carousel-indicators .active {
+    background-color: #2b80ff;
+}
