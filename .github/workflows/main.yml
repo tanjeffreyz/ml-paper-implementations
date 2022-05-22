@@ -45,7 +45,4 @@ jobs:
         git add *
         git commit -m 'Updated webpage'
         git push
-        git checkout github-pages
-        git pull
-        git merge main
-        git push
+        git push -f origin main:github-pages
