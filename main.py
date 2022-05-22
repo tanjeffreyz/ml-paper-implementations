@@ -95,7 +95,7 @@ def parse_header(contents):
     header = {
         'tags': None,
         'title': None,
-        # 'authors': None,
+        'images': None,
         'category': None
     }
     for line in contents[start:end]:
@@ -107,8 +107,8 @@ def parse_header(contents):
                 header[key] = {x.strip().lower() for x in value.split(',')}
             elif key in {'category', 'title'}:
                 header[key] = value
-            # elif key in {'authors'}:
-            #     header[key] = [x.strip() for x in value.split(',')]
+            elif key in {'images'}:
+                header[key] = [x.strip() for x in value.split(',')]
     if all(x is not None for x in header.values()):
         return header
 
