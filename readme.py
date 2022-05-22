@@ -46,12 +46,11 @@ class Readme:
                 name = repo.get('name', '')
                 anchor = get_anchor(f'{owner} {name}')
                 title = repo.get('header', {}).get('title', '')
-                for _ in range(10):
-                    contents.append(
-                        f'<li class="list-group-item mt-1 pe-2">'
-                        f'<a class="link-dark rounded text-decoration-none" '
-                        f'href="#{anchor}">{title}</a></li>'
-                    )
+                contents.append(
+                    f'<li class="list-group-item mt-1 pe-2">'
+                    f'<a class="link-dark rounded text-decoration-none" '
+                    f'href="#{anchor}">{title}</a></li>'
+                )
             contents += group_end
         contents += toc_end
 
