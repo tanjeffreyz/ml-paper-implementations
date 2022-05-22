@@ -77,7 +77,8 @@ li a {
     left: 0;
     padding-top: 25px;
     height: auto;
-    overflow-y: auto;
+    overflow-y: auto;       /* Fallback */
+    overflow-y: overlay;
     overflow-x: hidden;
     border-right: 1px solid lightgray;
 }
