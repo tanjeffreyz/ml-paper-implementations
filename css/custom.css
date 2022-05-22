@@ -99,3 +99,22 @@ li a {
 .carousel .carousel-indicators .active {
     background-color: #2b80ff;
 }
+
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #dadada;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #969696;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6c6c6c; 
+}
