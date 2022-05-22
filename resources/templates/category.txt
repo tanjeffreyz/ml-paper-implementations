@@ -1,8 +1,9 @@
-<div id="__CATEGORY_ANCHOR__" class="container-fluid block">
+<div id="__CATEGORY_ANCHOR__" class="container-fluid block mt-3">
     <div class="row">
         <div class="col"></div>
         <div class="col-9 clamped-col">
             <h2>__CATEGORY_NAME__</h2>
+            <hr>
 
             __DIVIDER__
 
