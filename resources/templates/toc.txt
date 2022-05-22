@@ -1,4 +1,4 @@
-<div class="container-fluid block col-3 side-bar side-bar-width">
+<div class="container-fluid col-3 side-bar side-bar-width">
     <ul class="list-unstyled">
 
         __DIVIDER__
