@@ -10,4 +10,7 @@
     <p>
         __DESCRIPTION__
     </p>
+
+    __DIVIDER__
+
 </div>

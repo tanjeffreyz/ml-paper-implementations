@@ -66,7 +66,7 @@ class Readme:
             for repo in self.REPOS[key]:
                 owner = repo.get('owner', {}).get('login', '')
                 name = repo.get('name', '')
-                contents += fill_template(
+                repo_start, repo_end = fill_template(
                     'repository',
                     variables={
                         '__TITLE__': repo.get('header', {}).get('title', ''),
@@ -74,7 +74,14 @@ class Readme:
                         '__REPO_ANCHOR__': get_anchor(f'{owner} {name}'),
                         '__DESCRIPTION__': repo.get('description', '')
                     }
-                )[0]
+                )
+                contents += repo_start
+
+                # Display images
+
+
+                contents += repo_end
+
             contents += category_end
 
         contents += index_end       # Finish index
