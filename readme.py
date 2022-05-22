@@ -6,14 +6,13 @@ class Readme:
         self.REPOS = repos
 
     def generate(self):
+        print('\n[~] Generating README.md:')
+
         CATEGORIES = sorted(self.REPOS.keys())
 
         contents = []
-
         index_start, index_end = load_template('index')
         contents += index_start
-
-        # contents += load_template('sidebar')[0]
 
         # Navigation bar
         navbar_start, navbar_end = load_template('navbar')
@@ -101,11 +100,13 @@ class Readme:
                         next_indent -= 1
             contents[i] = ' ' * 4 * max(0, indent) + line
             indent = next_indent
+        print(' -  Finished compiling contents')
 
         # Save to file
         contents.append('')
         with open('index.html', 'w') as file:
             file.write('\n'.join(contents))
+        print(' -  Saved result to README.md')
 
 
 def get_anchor(string):
