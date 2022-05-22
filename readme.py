@@ -1,14 +1,18 @@
 import os
 
 
+IGNORED_TAGS = ('meta', 'link', '!DOCTYPE', 'br', 'hr')
+
+
 class Readme:
     def __init__(self, repos):
         self.REPOS = repos
+        self.CATEGORIES = sorted(self.REPOS.keys())
 
     def generate(self):
         print('\n[~] Generating README.md:')
 
-        CATEGORIES = sorted(self.REPOS.keys())
+
 
         contents = []
         index_start, index_end = load_template('index')
@@ -17,7 +21,7 @@ class Readme:
         # Navigation bar
         navbar_start, navbar_end = load_template('navbar')
         contents += navbar_start
-        for key in CATEGORIES:
+        for key in self.CATEGORIES:
             anchor = get_anchor(key) + '-category'
             contents.append(f'<li><a class="dropdown-item" href="#{anchor}">{key}</a></li>')
         contents += navbar_end
@@ -28,7 +32,7 @@ class Readme:
         # Table of Contents
         toc_start, toc_end = load_template('toc')
         contents += toc_start
-        for i, key in enumerate(CATEGORIES):
+        for i, key in enumerate(self.CATEGORIES):
             classes = 'mb-1' + (' mt-4' if i != 0 else '')
             button_target = get_anchor(key) + '-button'
             group_start, group_end = fill_template(
@@ -54,7 +58,7 @@ class Readme:
         contents += toc_end
 
         # Categories and repositories
-        for key in CATEGORIES:
+        for key in self.CATEGORIES:
             category_start, category_end = fill_template(
                 'category',
                 variables={
@@ -67,12 +71,13 @@ class Readme:
                 owner = repo.get('owner', {}).get('login', '')
                 name = repo.get('name', '')
                 default_branch = repo.get('defaultBranchRef', {}).get('name', '')
+                repo_anchor = get_anchor(f'{owner} {name}')
                 repo_start, repo_end = fill_template(
                     'repository',
                     variables={
                         '__TITLE__': repo.get('header', {}).get('title', ''),
                         '__REPO__': f'{owner}/{name}',
-                        '__REPO_ANCHOR__': get_anchor(f'{owner} {name}'),
+                        '__REPO_ANCHOR__': repo_anchor,
                         '__DESCRIPTION__': repo.get('description', '')
                     }
                 )
@@ -80,36 +85,41 @@ class Readme:
 
                 # Display images
                 images = repo.get('header', {}).get('images', [])
-                print(images)
-                for path in images:
+                carousel_id = repo_anchor + '-carousel'
+                indicators = []
+                slides = []
+                carousel_start, carousel_middle, carousel_end = fill_template(
+                    'carousel',
+                    variables={
+                        '__CAROUSEL_ID__': carousel_id
+                    }
+                )
+                for i, path in enumerate(images):
+                    current = 'aria-current="true" ' if i == 0 else ''
+                    indicator = f'<button type="button" data-bs-target="#{carousel_id}" data-bs-slide-to="{i}" ' \
+                                f'class="active" {current}aria-label="Slide {i + 1}"></button>'
+                    indicators.append(indicator)
+
+                    active = ' active' if i == 0 else ''
                     url = f'https://raw.githubusercontent.com/{owner}/{name}/{default_branch}/{path}'
-                    contents.append(f'<img src="{url}" width="33%" />')
+                    slides += [
+                        f'<div class="carousel-item{active}">',
+                        f'<img src="{url}" style="margin: auto;" class="d-block" height="300px" />',
+                        '</div>'
+                    ]
+
+                # Build carousel
+                contents += carousel_start
+                contents += indicators
+                contents += carousel_middle
+                contents += slides
+                contents += carousel_end
                 contents += repo_end
             contents += category_end
 
         contents += index_end       # Finish index
+        indent(contents)            # Add indentation
 
-        # Add indentation
-        indent = 0
-        ignored = ('meta', 'link', '!DOCTYPE')
-        for i in range(len(contents)):
-            line = contents[i]
-            next_indent = indent
-            if not any(line.startswith(f'<{x}') for x in ignored):
-                first = True
-                for j in range(len(line)):
-                    if line[j] == '<':
-                        if j < len(line) - 1 and line[j+1] == '/':
-                            if first:
-                                indent -= 1         # If '</' comes first, decrease current indent
-                            next_indent -= 1
-                        else:
-                            next_indent += 1
-                        first = False
-                    elif line[j] == '/' and j < len(line) - 1 and line[j+1] == '>':
-                        next_indent -= 1
-            contents[i] = ' ' * 4 * max(0, indent) + line
-            indent = next_indent
         print(' -  Finished compiling contents')
 
         # Save to file
@@ -117,6 +127,30 @@ class Readme:
         with open('index.html', 'w') as file:
             file.write('\n'.join(contents))
         print(' -  Saved result to README.md')
+
+
+def indent(contents):
+    """Mutatively indents each line in CONTENTS."""
+
+    indent = 0
+    for i in range(len(contents)):
+        line = contents[i]
+        next_indent = indent
+        if not any(line.startswith(f'<{x}') for x in IGNORED_TAGS):
+            first = True
+            for j in range(len(line)):
+                if line[j] == '<':
+                    if j < len(line) - 1 and line[j + 1] == '/':
+                        if first:
+                            indent -= 1  # If '</' comes first, decrease current indent
+                        next_indent -= 1
+                    else:
+                        next_indent += 1
+                    first = False
+                elif line[j] == '/' and j < len(line) - 1 and line[j + 1] == '>':
+                    next_indent -= 1
+        contents[i] = ' ' * 4 * max(0, indent) + line
+        indent = next_indent
 
 
 def get_anchor(string):
