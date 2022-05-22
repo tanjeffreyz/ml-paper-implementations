@@ -34,6 +34,9 @@ jobs:
       run: |
         python --version
         python main.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     
     - name: Commit new index.html
       run: |
