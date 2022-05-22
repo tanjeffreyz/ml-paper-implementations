@@ -11,123 +11,205 @@
         <link href="css/custom.css" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light ps-5 pe-5">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#intro">ML Paper Implementations</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-nowrap" href="#table-of-contents">Table of Contents</a>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categories
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#convolutional-neural-networks-category">Convolutional Neural Networks</a></li>
-                                <li><a class="dropdown-item" href="#generative-adversarial-networks-category">Generative Adversarial Networks</a></li>
-                                <li><a class="dropdown-item" href="#residual-neural-networks-category">Residual Neural Networks</a></li>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col">
+                    <div class="flex-shrink-0 p-3 bg-white" style="width: 16.6667%; position: fixed; top: 0; left: 0;">
+                        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                            <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                            <span class="fs-5 fw-semibold">Collapsible</span>
+                        </a>
+                        <ul class="list-unstyled ps-0">
+                            <li class="mb-1">
+                                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                                    Home
+                                </button>
+                                <div class="collapse show" id="home-collapse" style="">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#" class="link-dark rounded">Overview</a></li>
+                                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                                    Dashboard
+                                </button>
+                                <div class="collapse show" id="dashboard-collapse" style="">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#" class="link-dark rounded">Overview</a></li>
+                                        <li><a href="#" class="link-dark rounded">Weekly</a></li>
+                                        <li><a href="#" class="link-dark rounded">Monthly</a></li>
+                                        <li><a href="#" class="link-dark rounded">Annually</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
+                                    Orders
+                                </button>
+                                <div class="collapse show" id="orders-collapse" style="">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#" class="link-dark rounded">New</a></li>
+                                        <li><a href="#" class="link-dark rounded">Processed</a></li>
+                                        <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                                        <li><a href="#" class="link-dark rounded">Returned</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="border-top my-3"></li>
+                            <li class="mb-1">
+                                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                                    Account
+                                </button>
+                                <div class="collapse" id="account-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><a href="#" class="link-dark rounded">New...</a></li>
+                                        <li><a href="#" class="link-dark rounded">Profile</a></li>
+                                        <li><a href="#" class="link-dark rounded">Settings</a></li>
+                                        <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light ps-5 pe-5">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#intro">ML Paper Implementations</a>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link text-nowrap" href="#table-of-contents">Table of Contents</a>
+                                </li>
+                                <li class="nav-item ms-3">
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Categories
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#convolutional-neural-networks-category">Convolutional Neural Networks</a></li>
+                                            <li><a class="dropdown-item" href="#generative-adversarial-networks-category">Generative Adversarial Networks</a></li>
+                                            <li><a class="dropdown-item" href="#residual-neural-networks-category">Residual Neural Networks</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item ms-3">
+                                    <a href="https://github.com/tanjeffreyz/ml-paper-implementations">
+                                        <img class="nav-link" src="resources/github-icon.png" height="40px" title="View on GitHub" />
+                                    </a>
+                                </li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="nav-item ms-3">
-                        <a href="https://github.com/tanjeffreyz/ml-paper-implementations">
-                            <img class="nav-link" src="resources/github-icon.png" height="40px" title="View on GitHub" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div id="intro" class="container-fluid block">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-8 clamped-col">
-                    <h1 style="padding-bottom: 0;" align="center">Machine Learning Paper Implementations</h1>
-                    <h4 style="padding-bottom: 10px;" align="center">by Jeffrey Tan</h4>
-                    <p>
-                        Below is a collection of all my implementations of various machine learning papers.
-                        This webpage automatically updates once a day using GitHub Actions, so be sure to check
-                        back for more!
-                    </p>
-                </div>
-                <div class="col"></div>
-            </div>
-        </div>
-        <div id="table-of-contents" class="container-fluid block">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-8 clamped-col">
-                    <h2>Table of Contents</h2>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-primary">Convolutional Neural Networks</li>
-                        <li class="list-group-item"><a class="text-decoration-none ms-4" href="#lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
-                    </ul>
-                    <ul class="list-group mt-4">
-                        <li class="list-group-item list-group-item-primary">Generative Adversarial Networks</li>
-                        <li class="list-group-item"><a class="text-decoration-none ms-4" href="#generative-adversarial-networks">Generative Adversarial Networks</a></li>
-                    </ul>
-                    <ul class="list-group mt-4">
-                        <li class="list-group-item list-group-item-primary">Residual Neural Networks</li>
-                        <li class="list-group-item"><a class="text-decoration-none ms-4" href="#deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
-                    </ul>
-                </div>
-                <div class="col"></div>
-            </div>
-        </div>
-        <div id="convolutional-neural-networks-category" class="container-fluid block">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-8 clamped-col">
-                    <h2>Convolutional Neural Networks</h2>
-                    <div>
-                        <h4 class="in-line">Gradient-based learning applied to document recognition (LeNet-5)</h4>
-                        <span class="in-line icon" style="position: relative; top: 2px; left: 5px">
-                            <a href="https://github.com/tanjeffreyz">
-                                <img src="resources/github-icon.png" width="32px" />
-                            </a>
-                        </span>
+                    </nav>
+                    <div id="intro" class="container-fluid block">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-8 clamped-col">
+                                <h1 style="padding-bottom: 0;" align="center">Machine Learning Paper Implementations</h1>
+                                <h4 style="padding-bottom: 10px;" align="center">by Jeffrey Tan</h4>
+                                <p>
+                                    Below is a collection of all my implementations of various machine learning papers.
+                                    This webpage automatically updates every day using GitHub Actions, so be sure to check
+                                    back for more!
+                                </p>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                    <div id="table-of-contents" class="container-fluid block">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-8 clamped-col">
+                                <h2>Table of Contents</h2>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-primary">Convolutional Neural Networks</li>
+                                    <li class="list-group-item"><a class="text-decoration-none ms-4" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                </ul>
+                                <ul class="list-group mt-4">
+                                    <li class="list-group-item list-group-item-primary">Generative Adversarial Networks</li>
+                                    <li class="list-group-item"><a class="text-decoration-none ms-4" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                </ul>
+                                <ul class="list-group mt-4">
+                                    <li class="list-group-item list-group-item-primary">Residual Neural Networks</li>
+                                    <li class="list-group-item"><a class="text-decoration-none ms-4" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                </ul>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                    <div id="convolutional-neural-networks-category" class="container-fluid block">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-8 clamped-col">
+                                <h2>Convolutional Neural Networks</h2>
+                                <div class="container-fluid mt-4 ms-2">
+                                    <a class="repo-anchor" id="tanjeffreyz-lenet-5"></a>
+                                    <h4>Gradient-based learning applied to document recognition (LeNet-5)</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/lenet-5">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/lenet-5</b></span>
+                                    </a>
+                                    <p>
+                                        PyTorch implementation of LeNet-5 published in "Gradient-based learning applied to document recognition" by Y. Lecun, L. Bottou, Y. Bengio, P. Haffner
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                    <div id="generative-adversarial-networks-category" class="container-fluid block">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-8 clamped-col">
+                                <h2>Generative Adversarial Networks</h2>
+                                <div class="container-fluid mt-4 ms-2">
+                                    <a class="repo-anchor" id="tanjeffreyz-generative-adversarial-networks"></a>
+                                    <h4>Generative Adversarial Networks</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/generative-adversarial-networks">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/generative-adversarial-networks</b></span>
+                                    </a>
+                                    <p>
+                                        PyTorch implementation of "Generative Adversarial Networks" by Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                    <div id="residual-neural-networks-category" class="container-fluid block">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-8 clamped-col">
+                                <h2>Residual Neural Networks</h2>
+                                <div class="container-fluid mt-4 ms-2">
+                                    <a class="repo-anchor" id="tanjeffreyz-deep-residual-learning"></a>
+                                    <h4>Deep Residual Learning for Image Recognition</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/deep-residual-learning">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/deep-residual-learning</b></span>
+                                    </a>
+                                    <p>
+                                        PyTorch implementations of the deep residual networks published in "Deep Residual Learning for Image Recognition" by Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col"></div>
             </div>
+            <div class="container-fluid block"></div>
         </div>
-        <div id="generative-adversarial-networks-category" class="container-fluid block">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-8 clamped-col">
-                    <h2>Generative Adversarial Networks</h2>
-                    <div>
-                        <h4 class="in-line">Generative Adversarial Networks</h4>
-                        <span class="in-line icon" style="position: relative; top: 2px; left: 5px">
-                            <a href="https://github.com/tanjeffreyz">
-                                <img src="resources/github-icon.png" width="32px" />
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <div class="col"></div>
-            </div>
-        </div>
-        <div id="residual-neural-networks-category" class="container-fluid block">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-8 clamped-col">
-                    <h2>Residual Neural Networks</h2>
-                    <div>
-                        <h4 class="in-line">Deep Residual Learning for Image Recognition</h4>
-                        <span class="in-line icon" style="position: relative; top: 2px; left: 5px">
-                            <a href="https://github.com/tanjeffreyz">
-                                <img src="resources/github-icon.png" width="32px" />
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <div class="col"></div>
-            </div>
-        </div>
-        <div class="container-fluid block"></div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>

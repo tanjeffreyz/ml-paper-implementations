@@ -6,7 +6,7 @@
             <h4 style="padding-bottom: 10px;" align="center">by Jeffrey Tan</h4>
             <p>
                 Below is a collection of all my implementations of various machine learning papers.
-                This webpage automatically updates once a day using GitHub Actions, so be sure to check
+                This webpage automatically updates every day using GitHub Actions, so be sure to check
                 back for more!
             </p>
         </div>

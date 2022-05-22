@@ -13,6 +13,8 @@ class Readme:
         index_start, index_end = load_template('index')
         contents += index_start
 
+        contents += load_template('sidebar')[0]
+
         # Navigation bar
         navbar_start, navbar_end = load_template('navbar')
         contents += navbar_start
@@ -34,7 +36,9 @@ class Readme:
                 f'<li class="list-group-item list-group-item-primary">{key}</li>'
             ]
             for repo in self.REPOS[key]:
-                anchor = get_anchor(repo.get('name', ''))
+                owner = repo.get('owner', {}).get('login', '')
+                name = repo.get('name', '')
+                anchor = get_anchor(f'{owner} {name}')
                 title = repo.get('header', {}).get('title', '')
                 contents.append(f'<li class="list-group-item">'
                                 f'<a class="text-decoration-none ms-4" href="#{anchor}">{title}</a></li>')
@@ -52,10 +56,15 @@ class Readme:
             )
             contents += category_start
             for repo in self.REPOS[key]:
+                owner = repo.get('owner', {}).get('login', '')
+                name = repo.get('name', '')
                 contents += fill_template(
                     'repository',
                     variables={
-                        '__TITLE__': repo.get('header', {}).get('title', '')
+                        '__TITLE__': repo.get('header', {}).get('title', ''),
+                        '__REPO__': f'{owner}/{name}',
+                        '__REPO_ANCHOR__': get_anchor(f'{owner} {name}'),
+                        '__DESCRIPTION__': repo.get('description', '')
                     }
                 )[0]
 
@@ -67,10 +76,11 @@ class Readme:
 
         # Add indentation
         indent = 0
+        ignored = ('meta', 'link', '!DOCTYPE')
         for i in range(len(contents)):
             line = contents[i]
             next_indent = indent
-            if all(x not in line for x in ('meta', 'link', '!DOCTYPE')):
+            if not any(line.startswith(f'<{x}') for x in ignored):
                 first = True
                 for j in range(len(line)):
                     if line[j] == '<':

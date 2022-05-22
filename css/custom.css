@@ -24,6 +24,11 @@ body {
 
 h1 {
     padding-bottom: 20px;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.25rem;
 }
 
 p {
@@ -39,10 +44,10 @@ p {
     border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
 }
-
+/* 
 .clamped-col {
-    max-width: 900px;
-}
+    max-width: 80%;
+} */
 
 li a {
     display: block;
@@ -54,6 +59,17 @@ li a {
     display: inline-block;
 }
 
-.icon:hover {
+.repo-anchor {
+    display: block;
+    position: relative;
+    top: -75px;
+    visibility: hidden;
+}
+
+.repo-link img {
+    transition: transform 0.25s;
+}
+
+.repo-link:hover img {
     transform: scale(1.15);
 }

@@ -1,8 +1,13 @@
-<div>
-    <h4 class="in-line">__TITLE__</h4>
-    <span class="in-line icon" style="position: relative; top: 2px; left: 5px">
-        <a href="https://github.com/tanjeffreyz">
-            <img src="resources/github-icon.png" width="32px" />
-        </a>
-    </span>
+<div class="container-fluid mt-4 ms-2">
+    <a class="repo-anchor" id="__REPO_ANCHOR__"></a>
+    <h4>__TITLE__</h4>
+    <a class="repo-link text-decoration-none" href="https://github.com/__REPO__">
+        <span class="in-line icon me-1">
+            <img src="resources/github-icon.png" width="24px" />
+        </span>
+        <span class="in-line"><b>__REPO__</b></span>
+    </a>
+    <p>
+        __DESCRIPTION__
+    </p>
 </div>
