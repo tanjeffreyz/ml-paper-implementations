@@ -66,6 +66,7 @@ class Readme:
             for repo in self.REPOS[key]:
                 owner = repo.get('owner', {}).get('login', '')
                 name = repo.get('name', '')
+                default_branch = repo.get('defaultBranchRef', {}).get('name', '')
                 repo_start, repo_end = fill_template(
                     'repository',
                     variables={
@@ -78,10 +79,12 @@ class Readme:
                 contents += repo_start
 
                 # Display images
-
-
+                images = repo.get('header', {}).get('images', [])
+                print(images)
+                for path in images:
+                    url = f'https://raw.githubusercontent.com/{owner}/{name}/{default_branch}/{path}'
+                    contents.append(f'<img src="{url}" width="33%" />')
                 contents += repo_end
-
             contents += category_end
 
         contents += index_end       # Finish index
