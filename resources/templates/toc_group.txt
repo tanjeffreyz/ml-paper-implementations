@@ -1,0 +1,12 @@
+<li class="__CLASSES__">
+    <button class="btn btn-outline-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#__TARGET__" aria-expanded="false">
+        __CATEGORY__
+    </button>
+    <div class="collapse" id="__TARGET__">
+        <ul class="list-group list-group-flush small">
+
+        __DIVIDER__
+
+        </ul>
+    </div>
+</li>

@@ -1,12 +1,7 @@
-<div id="table-of-contents" class="container-fluid block">
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-8 clamped-col">
-            <h2>Table of Contents</h2>
+<div class="container-fluid block col-3 side-bar side-bar-width">
+    <ul class="list-unstyled">
 
-            __DIVIDER__
+        __DIVIDER__
 
-        </div>
-        <div class="col"></div>
-    </div>
+    </ul>
 </div>

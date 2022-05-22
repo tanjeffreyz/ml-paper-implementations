@@ -44,10 +44,6 @@ p {
     border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
 }
-/* 
-.clamped-col {
-    max-width: 80%;
-} */
 
 li a {
     display: block;
@@ -72,4 +68,18 @@ li a {
 
 .repo-link:hover img {
     transform: scale(1.15);
+}
+
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid lightgray;
+}
+
+.side-bar-width {
+    max-width: 350px;
 }

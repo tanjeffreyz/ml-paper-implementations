@@ -15,7 +15,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2"></div>
+                <div class="col-3 side-bar-width"></div>
                 <div class="col">
 
                 __DIVIDER__

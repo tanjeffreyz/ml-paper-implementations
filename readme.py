@@ -13,7 +13,7 @@ class Readme:
         index_start, index_end = load_template('index')
         contents += index_start
 
-        contents += load_template('sidebar')[0]
+        # contents += load_template('sidebar')[0]
 
         # Navigation bar
         navbar_start, navbar_end = load_template('navbar')
@@ -30,19 +30,29 @@ class Readme:
         toc_start, toc_end = load_template('toc')
         contents += toc_start
         for i, key in enumerate(CATEGORIES):
-            classes = 'list-group' + (' mt-4' if i != 0 else '')
-            contents += [
-                f'<ul class="{classes}">',
-                f'<li class="list-group-item list-group-item-primary">{key}</li>'
-            ]
+            classes = 'mb-1' + (' mt-4' if i != 0 else '')
+            button_target = get_anchor(key) + '-button'
+            group_start, group_end = fill_template(
+                'toc_group',
+                variables={
+                    '__CLASSES__': classes,
+                    '__TARGET__': button_target,
+                    '__CATEGORY__': key
+                }
+            )
+            contents += group_start
             for repo in self.REPOS[key]:
                 owner = repo.get('owner', {}).get('login', '')
                 name = repo.get('name', '')
                 anchor = get_anchor(f'{owner} {name}')
                 title = repo.get('header', {}).get('title', '')
-                contents.append(f'<li class="list-group-item">'
-                                f'<a class="text-decoration-none ms-4" href="#{anchor}">{title}</a></li>')
-            contents.append('</ul>')
+                for _ in range(10):
+                    contents.append(
+                        f'<li class="list-group-item mt-1 pe-2">'
+                        f'<a class="link-dark rounded text-decoration-none" '
+                        f'href="#{anchor}">{title}</a></li>'
+                    )
+            contents += group_end
         contents += toc_end
 
         # Categories and repositories
@@ -67,10 +77,7 @@ class Readme:
                         '__DESCRIPTION__': repo.get('description', '')
                     }
                 )[0]
-
-
             contents += category_end
-
 
         contents += index_end       # Finish index
 

@@ -13,77 +13,14 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2"></div>
+                <div class="col-3 side-bar-width"></div>
                 <div class="col">
-                    <div class="flex-shrink-0 p-3 bg-white" style="width: 16.6667%; position: fixed; top: 0; left: 0;">
-                        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-                            <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-                            <span class="fs-5 fw-semibold">Collapsible</span>
-                        </a>
-                        <ul class="list-unstyled ps-0">
-                            <li class="mb-1">
-                                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                                    Home
-                                </button>
-                                <div class="collapse show" id="home-collapse" style="">
-                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                                        <li><a href="#" class="link-dark rounded">Reports</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="mb-1">
-                                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
-                                    Dashboard
-                                </button>
-                                <div class="collapse show" id="dashboard-collapse" style="">
-                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                                        <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                                        <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                                        <li><a href="#" class="link-dark rounded">Annually</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="mb-1">
-                                <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
-                                    Orders
-                                </button>
-                                <div class="collapse show" id="orders-collapse" style="">
-                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="#" class="link-dark rounded">New</a></li>
-                                        <li><a href="#" class="link-dark rounded">Processed</a></li>
-                                        <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                                        <li><a href="#" class="link-dark rounded">Returned</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="border-top my-3"></li>
-                            <li class="mb-1">
-                                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                                    Account
-                                </button>
-                                <div class="collapse" id="account-collapse">
-                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><a href="#" class="link-dark rounded">New...</a></li>
-                                        <li><a href="#" class="link-dark rounded">Profile</a></li>
-                                        <li><a href="#" class="link-dark rounded">Settings</a></li>
-                                        <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
                     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light ps-5 pe-5">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="#intro">ML Paper Implementations</a>
                         </div>
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link text-nowrap" href="#table-of-contents">Table of Contents</a>
-                                </li>
                                 <li class="nav-item ms-3">
                                     <div class="dropdown">
                                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -107,7 +44,7 @@
                     <div id="intro" class="container-fluid block">
                         <div class="row">
                             <div class="col"></div>
-                            <div class="col-8 clamped-col">
+                            <div class="col-8">
                                 <h1 style="padding-bottom: 0;" align="center">Machine Learning Paper Implementations</h1>
                                 <h4 style="padding-bottom: 10px;" align="center">by Jeffrey Tan</h4>
                                 <p>
@@ -119,31 +56,71 @@
                             <div class="col"></div>
                         </div>
                     </div>
-                    <div id="table-of-contents" class="container-fluid block">
-                        <div class="row">
-                            <div class="col"></div>
-                            <div class="col-8 clamped-col">
-                                <h2>Table of Contents</h2>
-                                <ul class="list-group">
-                                    <li class="list-group-item list-group-item-primary">Convolutional Neural Networks</li>
-                                    <li class="list-group-item"><a class="text-decoration-none ms-4" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
-                                </ul>
-                                <ul class="list-group mt-4">
-                                    <li class="list-group-item list-group-item-primary">Generative Adversarial Networks</li>
-                                    <li class="list-group-item"><a class="text-decoration-none ms-4" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
-                                </ul>
-                                <ul class="list-group mt-4">
-                                    <li class="list-group-item list-group-item-primary">Residual Neural Networks</li>
-                                    <li class="list-group-item"><a class="text-decoration-none ms-4" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
-                                </ul>
-                            </div>
-                            <div class="col"></div>
-                        </div>
+                    <div class="container-fluid block col-3 side-bar side-bar-width">
+                        <ul class="list-unstyled">
+                            <li class="mb-1">
+                                <button class="btn btn-outline-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#convolutional-neural-networks-button" aria-expanded="false">
+                                    Convolutional Neural Networks
+                                </button>
+                                <div class="collapse" id="convolutional-neural-networks-button">
+                                    <ul class="list-group list-group-flush small">
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-based learning applied to document recognition (LeNet-5)</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1 mt-4">
+                                <button class="btn btn-outline-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#generative-adversarial-networks-button" aria-expanded="false">
+                                    Generative Adversarial Networks
+                                </button>
+                                <div class="collapse" id="generative-adversarial-networks-button">
+                                    <ul class="list-group list-group-flush small">
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1 mt-4">
+                                <button class="btn btn-outline-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#residual-neural-networks-button" aria-expanded="false">
+                                    Residual Neural Networks
+                                </button>
+                                <div class="collapse" id="residual-neural-networks-button">
+                                    <ul class="list-group list-group-flush small">
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                        <li class="list-group-item mt-1 pe-2"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                     <div id="convolutional-neural-networks-category" class="container-fluid block">
                         <div class="row">
                             <div class="col"></div>
-                            <div class="col-8 clamped-col">
+                            <div class="col-8">
                                 <h2>Convolutional Neural Networks</h2>
                                 <div class="container-fluid mt-4 ms-2">
                                     <a class="repo-anchor" id="tanjeffreyz-lenet-5"></a>
@@ -165,7 +142,7 @@
                     <div id="generative-adversarial-networks-category" class="container-fluid block">
                         <div class="row">
                             <div class="col"></div>
-                            <div class="col-8 clamped-col">
+                            <div class="col-8">
                                 <h2>Generative Adversarial Networks</h2>
                                 <div class="container-fluid mt-4 ms-2">
                                     <a class="repo-anchor" id="tanjeffreyz-generative-adversarial-networks"></a>
@@ -187,7 +164,7 @@
                     <div id="residual-neural-networks-category" class="container-fluid block">
                         <div class="row">
                             <div class="col"></div>
-                            <div class="col-8 clamped-col">
+                            <div class="col-8">
                                 <h2>Residual Neural Networks</h2>
                                 <div class="container-fluid mt-4 ms-2">
                                     <a class="repo-anchor" id="tanjeffreyz-deep-residual-learning"></a>
