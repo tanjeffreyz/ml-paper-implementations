@@ -2,7 +2,7 @@
 
 A collection of all my implementations of various machine learning papers. Automatically updates every
 day using GitHub Actions.
-<br>
+<br> 
 
 <div align="center">
   <a href="https://tanjeffreyz.github.io/ml-paper-implementations"><b>Click here to visit the webpage</b></a>
