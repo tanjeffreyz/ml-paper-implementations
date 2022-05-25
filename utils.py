@@ -24,7 +24,7 @@ def parse_header(contents):
         line = contents[start].split(DELIMITER)
         ids = {x.strip().lower() for x in line}
     else:
-        ids = {}
+        ids = set()
     for line in contents[start+1:end]:
         args = line.split(':')
         if len(args) == 2:
