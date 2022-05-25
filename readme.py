@@ -69,7 +69,7 @@ class Readme:
                 name = repo.get('name', '')
                 default_branch = repo.get('defaultBranchRef', {}).get('name', '')
                 repo_anchor = get_anchor(f'{owner} {name}')
-                repo_start, repo_end = fill_template(
+                repo_start, repo_middle, repo_end = fill_template(
                     'repository',
                     variables={
                         '__TITLE__': repo.get('header', {}).get('title', ''),
@@ -79,6 +79,13 @@ class Readme:
                     }
                 )
                 contents += repo_start
+
+                # Display repository topics
+                topics = repo.get('repositoryTopics', {}).get('nodes', [])
+                for node in topics:
+                    topic = node.get('topic', {}).get('name', '')
+                    contents.append(f'<span class="repo-topic">{topic}</span>')
+                contents += repo_middle
 
                 # Display images
                 images = repo.get('header', {}).get('images', [])

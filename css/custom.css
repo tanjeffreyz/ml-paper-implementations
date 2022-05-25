@@ -104,6 +104,16 @@ li a {
     background-color: #2b80ff;
 }
 
+.repo-topic {
+    display: inline-block;
+    padding: 0px 10px;
+    background-color: #ddf4ff;
+    color: #0969da;
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 11px;
+}
+
 
 /* Custom Scroll Bar */
 ::-webkit-scrollbar {

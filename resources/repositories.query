@@ -28,6 +28,13 @@
         defaultBranchRef {
           name
         }
+        repositoryTopics(first: 100) {
+          nodes {
+            topic {
+              name
+            }
+          }
+        }
       }
     }
     repositoriesContributedTo(
@@ -57,6 +64,13 @@
         }
         defaultBranchRef {
           name
+        }
+        repositoryTopics(first: 100) {
+          nodes {
+            topic {
+              name
+            }
+          }
         }
       }
     }

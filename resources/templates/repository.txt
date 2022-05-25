@@ -7,6 +7,11 @@
         </span>
         <span class="in-line"><b>__REPO__</b></span>
     </a>
+    <div class="mt-1">
+
+        __DIVIDER__
+
+    </div>
     <p>
         __DESCRIPTION__
     </p>
