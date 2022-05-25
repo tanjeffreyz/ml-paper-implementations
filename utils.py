@@ -2,6 +2,7 @@ import os
 
 
 IGNORED_TAGS = ('meta', 'link', '!DOCTYPE', 'br', 'hr')
+DELIMITER = ','
 
 
 def parse_header(contents):
@@ -15,24 +16,28 @@ def parse_header(contents):
 
     # Parse header for repository information
     header = {
-        'tags': None,
         'title': None,
         'images': None,
         'category': None
     }
-    for line in contents[start:end]:
+    if start < len(contents):
+        line = contents[start].split(DELIMITER)
+        ids = {x.strip().lower() for x in line}
+    else:
+        ids = {}
+    for line in contents[start+1:end]:
         args = line.split(':')
         if len(args) == 2:
             key = args[0].strip().lower()
             value = args[1].strip()
-            if key in {'tags'}:
-                header[key] = {x.strip().lower() for x in value.split(',')}
-            elif key in {'category', 'title'}:
+            if key in {'category', 'title'}:
                 header[key] = value
             elif key in {'images'}:
-                header[key] = [x.strip() for x in value.split(',')]
-    if all(x is not None for x in header.values()):
-        return header
+                header[key] = [x.strip() for x in value.split(DELIMITER)]
+    if all(x is not None for x in header.values()):     # Require all attributes to be present
+        return ids, header
+    else:
+        return ids, None
 
 
 def indent(contents):

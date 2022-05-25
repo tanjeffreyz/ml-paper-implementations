@@ -10,9 +10,9 @@ from utils import parse_header
 class Main:
     TARGET = 'https://api.github.com/graphql'
 
-    def __init__(self, tags=tuple()):
+    def __init__(self, id):
         self.CLIENT = Client(os.getenv('ACCESS_TOKEN'))
-        self.TAGS = tags
+        self.ID = id
 
     async def run(self):
         repos = await self.get_all_repos()
@@ -62,8 +62,8 @@ class Main:
             url = f'https://raw.githubusercontent.com/{owner}/{name}/{default_branch}/README.md'
             try:
                 contents = [x.decode('utf-8').strip() for x in urlopen(url)]
-                header = parse_header(contents)
-                if header is not None and any(x in header['tags'] for x in self.TAGS):
+                ids, header = parse_header(contents)
+                if self.ID in ids and header is not None:
                     r['header'] = header
                     category = header['category']
                     if category not in filtered:
@@ -84,5 +84,5 @@ class Main:
 
 
 if __name__ == '__main__':
-    main = Main(tags=('mlpi',))
+    main = Main('mlpi')
     asyncio.run(main.run())
