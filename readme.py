@@ -101,14 +101,13 @@ class Readme:
 
         contents += index_end       # Finish index
         indent(contents)            # Add indentation
-
         print(' -  Finished compiling contents')
 
         # Save to file
         contents.append('')
         with open('index.html', 'w') as file:
             file.write('\n'.join(contents))
-        print(' -  Saved result to README.md')
+        print(' ~  Saved result to README.md')
 
     def _nested_dropdown(self, curr_dict, index, key, depth=0):
         nested = curr_dict['nested']
@@ -122,7 +121,8 @@ class Readme:
             variables={
                 '__CLASSES__': classes,
                 '__TARGET__': target,
-                '__CATEGORY__': key
+                '__CATEGORY__': key,
+                '__COLLAPSE__': 'collapse' if len(nested) == 0 else ''
             }
         )
         contents += group_start
