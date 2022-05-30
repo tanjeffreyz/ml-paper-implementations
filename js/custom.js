@@ -2,6 +2,6 @@ document.querySelector('.repo-anchor').scrollIntoView({
     behavior: 'smooth' 
 });
 
-document.querySelector('.block').scrollIntoView({ 
+document.querySelector('.section').scrollIntoView({
     behavior: 'smooth' 
 });

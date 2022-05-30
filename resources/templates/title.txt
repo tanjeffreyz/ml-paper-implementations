@@ -1,4 +1,4 @@
-<div id="intro" class="container-fluid block">
+<div id="intro" class="container-fluid section">
     <div class="row">
         <div class="col"></div>
         <div class="col-9 clamped-col">

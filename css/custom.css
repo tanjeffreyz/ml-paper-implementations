@@ -20,7 +20,7 @@ body {
     animation: fade-in 1s ease-out forwards;
 }
 
-.block:before {
+.section:before {
     height: 75px;
     content: "";
     display: block;
