@@ -17,8 +17,8 @@ def parse_header(contents):
     # Parse header for repository information
     header = {
         'title': None,
-        'images': None,
-        'category': None
+        'category': None,
+        'images': None
     }
     if start < len(contents):
         line = contents[start].split(DELIMITER)
@@ -26,11 +26,11 @@ def parse_header(contents):
     else:
         ids = set()
     for line in contents[start+1:end]:
-        args = line.split(':')
+        args = line.split(':', 1)
         if len(args) == 2:
             key = args[0].strip().lower()
             value = args[1].strip()
-            if key in {'category', 'title'}:
+            if key in {'title', 'category'}:
                 header[key] = value
             elif key in {'images'}:
                 header[key] = [x.strip() for x in value.split(DELIMITER)]
