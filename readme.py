@@ -131,7 +131,7 @@ class Readme:
         for i, key in enumerate(sorted(nested.keys())):
             contents += [
                 li_header,
-                '<ul class="list-unstyled">'           # TODO: style might not be appropriate
+                '<ul class="list-unstyled">'
             ]
             contents += self._nested_dropdown(
                 nested[key],

@@ -71,17 +71,14 @@ class Main:
                     r['header'] = header
                     category = header['category']
                     curr_dict = filtered
-                    for c in category:
+                    for c in category:      # Traverse category tree
                         if c not in curr_dict['nested']:
                             curr_dict['nested'][c] = {
                                 'nested': {},
                                 'items': []
                             }
                         curr_dict = curr_dict['nested'][c]
-                        # if category not in filtered:
-                        #     filtered[category] = []
                     curr_dict['items'].append(r)
-                    # filtered[category].append(r)
             except urllib.error.HTTPError:
                 print(f" !  Invalid URL: '{url}'")
         return filtered
