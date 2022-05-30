@@ -5,7 +5,7 @@ IGNORED_TAGS = ('meta', 'link', '!DOCTYPE', 'br', 'hr')
 DELIMITER = ','
 
 
-def parse_header(contents):
+def parse_header(contents, max_depth):
     i = 0
     while i < len(contents) and '<!--' not in contents[i]:
         i += 1
@@ -30,10 +30,17 @@ def parse_header(contents):
         if len(args) == 2:
             key = args[0].strip().lower()
             value = args[1].strip()
-            if key in {'title', 'category'}:
+            if key in {'title'}:
                 header[key] = value
             elif key in {'images'}:
                 header[key] = [x.strip() for x in value.split(DELIMITER)]
+            elif key == 'category':
+                result = []
+                for x in value.split('/'):
+                    stripped = x.strip()
+                    if stripped:
+                        result.append(stripped)
+                header[key] = result[:max_depth]
     if all(x is not None for x in header.values()):     # Require all attributes to be present
         return ids, header
     else:
@@ -92,3 +99,10 @@ def fill_template(name, variables=dict()):
             for var in variables:
                 block[i] = block[i].replace(var, variables[var])
     return blocks
+
+
+def flatten_dict(curr_dict):
+    result = curr_dict['items']
+    for _, value in sorted(curr_dict['nested'].items()):
+        result += flatten_dict(value)
+    return result

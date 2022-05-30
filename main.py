@@ -10,9 +10,10 @@ from utils import parse_header
 class Main:
     TARGET = 'https://api.github.com/graphql'
 
-    def __init__(self, id):
+    def __init__(self, id, max_depth=2):
         self.CLIENT = Client(os.getenv('ACCESS_TOKEN'))
         self.ID = id
+        self.MAX_DEPTH = max_depth      # Maximum subcategory depth, 'a/b/c' is depth 3
 
     async def run(self):
         repos = await self.get_all_repos()
@@ -54,7 +55,10 @@ class Main:
         """Filters repositories and keeps those with tags in SELF.TAGS"""
 
         print('\n[~] Parsing repositories:')
-        filtered = {}
+        filtered = {
+            'nested': {},   # Nested categories
+            'items': []     # Independent items
+        }
         for r in repos:
             name = r.get('name', '')
             owner = r.get('owner', {}).get('login', '')
@@ -62,13 +66,22 @@ class Main:
             url = f'https://raw.githubusercontent.com/{owner}/{name}/{default_branch}/README.md'
             try:
                 contents = [x.decode('utf-8').strip() for x in urlopen(url)]
-                ids, header = parse_header(contents)
+                ids, header = parse_header(contents, self.MAX_DEPTH)
                 if self.ID in ids and header is not None:
                     r['header'] = header
                     category = header['category']
-                    if category not in filtered:
-                        filtered[category] = []
-                    filtered[category].append(r)
+                    curr_dict = filtered
+                    for c in category:
+                        if c not in curr_dict['nested']:
+                            curr_dict['nested'][c] = {
+                                'nested': {},
+                                'items': []
+                            }
+                        curr_dict = curr_dict['nested'][c]
+                        # if category not in filtered:
+                        #     filtered[category] = []
+                    curr_dict['items'].append(r)
+                    # filtered[category].append(r)
             except urllib.error.HTTPError:
                 print(f" !  Invalid URL: '{url}'")
         return filtered
