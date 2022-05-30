@@ -142,7 +142,7 @@ class Readme:
             contents.append('</li>')
 
         # Independent items
-        for repo in curr_dict['items'] * 10:
+        for repo in curr_dict['items']:
             owner = repo.get('owner', {}).get('login', '')
             name = repo.get('name', '')
             anchor = get_anchor(f'{owner} {name}')
