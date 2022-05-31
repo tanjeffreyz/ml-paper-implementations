@@ -6,8 +6,6 @@ name: ML Paper Implementations
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
   schedule:
   - cron: '30 */12 * * *'
 
