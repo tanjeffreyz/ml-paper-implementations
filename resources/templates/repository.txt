@@ -1,4 +1,4 @@
-<div class="mt-5">
+<div class="mt-5 pb-5">
     <a class="repo-anchor" id="__REPO_ANCHOR__"></a>
     <h4>__TITLE__</h4>
     <a class="repo-link text-decoration-none" href="https://github.com/__REPO__">

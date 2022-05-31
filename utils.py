@@ -72,7 +72,7 @@ def indent(contents):
 
 
 def get_anchor(string):
-    return string.lower().replace(' ', '-')
+    return string.strip().lower().replace(' ', '-')
 
 
 def load_template(name):
