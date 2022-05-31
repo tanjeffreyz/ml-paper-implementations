@@ -114,7 +114,11 @@ class Readme:
         li_header = '<li class="list-group-item mt-1 pe-2 border-0">'
 
         contents = []
-        classes = 'mb-1' + (' mt-4' if depth == 0 and index != 0 else '')
+        classes = ''
+        if depth == 0:
+            classes += 'mb-1'
+            if index != 0:
+                classes += ' mt-4'
         new_anchor = get_anchor(prev + ' ' + key)
         target = new_anchor + '-toc'
         group_start, group_end = fill_template(
