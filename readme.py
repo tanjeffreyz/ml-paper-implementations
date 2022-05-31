@@ -109,20 +109,21 @@ class Readme:
             file.write('\n'.join(contents))
         print(' ~  Saved result to README.md')
 
-    def _nested_dropdown(self, curr_dict, index, key, depth=0):
+    def _nested_dropdown(self, curr_dict, index, key, prev='', depth=0):
         nested = curr_dict['nested']
         li_header = '<li class="list-group-item mt-1 pe-2 border-0">'
 
         contents = []
         classes = 'mb-1' + (' mt-4' if depth == 0 and index != 0 else '')
-        target = get_anchor(key) + '-button'
+        new_anchor = get_anchor(prev + ' ' + key)
+        target = new_anchor + '-toc'
         group_start, group_end = fill_template(
             'toc_group' if depth == 0 else 'toc_subgroup',
             variables={
                 '__CLASSES__': classes,
                 '__TARGET__': target,
                 '__CATEGORY__': key,
-                '__COLLAPSE__': 'collapse' if len(nested) == 0 else ''
+                '__COLLAPSE__': 'collapse' + (' show' if len(nested) > 0 else '')
             }
         )
         contents += group_start
@@ -136,7 +137,8 @@ class Readme:
             contents += self._nested_dropdown(
                 nested[key],
                 i, key,
-                depth=depth+1
+                prev=new_anchor,
+                depth=depth + 1
             )
             contents.append('</ul>')
             contents.append('</li>')
