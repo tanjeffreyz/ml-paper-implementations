@@ -96,12 +96,23 @@ li a {
 }
 
 .carousel-indicators {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.95) 75%);
     margin-bottom: 0;
 }
 
 .carousel .carousel-indicators .active {
     background-color: #2b80ff;
+    transform: scaleY(1.2) translateY(-0.5px);
+}
+
+.carousel-control-prev {
+    opacity: 1 !important;
+    background-image: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.8) 33%);
+}
+
+.carousel-control-next {
+    opacity: 1 !important;
+    background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.8) 33%);
 }
 
 .repo-topic {
