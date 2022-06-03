@@ -105,6 +105,16 @@ li a {
     transform: scaleY(1.2) translateY(-0.5px);
 }
 
+.carousel-item {
+    height: 300px;
+}
+
+.carousel-item img {
+    max-width: 90%;
+    max-height: 100%;
+    margin: auto;
+}
+
 .carousel-control-prev {
     opacity: 1 !important;
     background-image: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.8) 33%);

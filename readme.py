@@ -86,7 +86,7 @@ class Readme:
                     url = f'https://raw.githubusercontent.com/{owner}/{name}/{default_branch}/{path}'
                     slides += [
                         f'<div class="carousel-item{active}">',
-                        f'<img src="{url}" style="margin: auto;" class="d-block" height="300px" />',
+                        f'<img src="{url}" class="d-block" />',
                         '</div>'
                     ]
 
