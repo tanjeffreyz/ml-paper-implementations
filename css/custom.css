@@ -105,24 +105,42 @@ li a {
     transform: scaleY(1.2) translateY(-0.5px);
 }
 
-.carousel-item {
+.carousel-inner {
     height: 300px;
+}
+
+.carousel-item {
+    position: relative;
+    height: 100%;
 }
 
 .carousel-item img {
     max-width: 90%;
     max-height: 100%;
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .carousel-control-prev {
+    width: 15%;
+    padding-right: 5%;
     opacity: 1 !important;
     background-image: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.8) 33%);
+    background-size: 66%, 100%;
+    background-position: left;
+    background-repeat: no-repeat;
 }
 
 .carousel-control-next {
+    width: 15%;
+    padding-left: 5%;
     opacity: 1 !important;
     background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.8) 33%);
+    background-size: 66%, 100%;
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 .repo-topic {
