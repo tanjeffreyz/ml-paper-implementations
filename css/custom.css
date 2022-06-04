@@ -98,6 +98,7 @@ li a {
 .carousel-indicators {
     background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0.95) 75%);
     margin-bottom: 0;
+    bottom: -23px;
 }
 
 .carousel .carousel-indicators .active {
@@ -106,7 +107,8 @@ li a {
 }
 
 .carousel-inner {
-    height: 300px;
+    height: 330px;
+    margin-bottom: 23px;
 }
 
 .carousel-item {
