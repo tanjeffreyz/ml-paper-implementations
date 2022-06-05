@@ -156,12 +156,16 @@ li a {
 }
 
 
-/* Custom Scroll Bar */
+/* Custom Scroll Bars */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
-::-webkit-scrollbar-track {
+.side-bar::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+body::-webkit-scrollbar-track {
     background: #dadada;
 }
 
@@ -171,5 +175,5 @@ li a {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #6c6c6c; 
+    background: #969696;
 }
