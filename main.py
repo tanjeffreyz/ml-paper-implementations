@@ -1,5 +1,6 @@
 import os
 import asyncio
+import heapq
 import urllib.error
 from urllib.request import urlopen
 from client import Client
@@ -78,7 +79,10 @@ class Main:
                                 'items': []
                             }
                         curr_dict = curr_dict['nested'][c]
-                    curr_dict['items'].append(r)
+                    heapq.heappush(             # Append items alphabetically
+                        curr_dict['items'],
+                        (r.get('name'), r)
+                    )
             except urllib.error.HTTPError:
                 print(f" !  Invalid URL: '{url}'")
         return filtered

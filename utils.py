@@ -50,25 +50,25 @@ def parse_header(contents, max_depth):
 def indent(contents):
     """Mutatively indents each line in CONTENTS."""
 
-    indent = 0
+    curr_indent = 0
     for i in range(len(contents)):
         line = contents[i]
-        next_indent = indent
+        next_indent = curr_indent
         if not any(line.startswith(f'<{x}') for x in IGNORED_TAGS):
             first = True
             for j in range(len(line)):
                 if line[j] == '<':
                     if j < len(line) - 1 and line[j + 1] == '/':
                         if first:
-                            indent -= 1  # If '</' comes first, decrease current indent
+                            curr_indent -= 1  # If '</' comes first, decrease current indent
                         next_indent -= 1
                     else:
                         next_indent += 1
                     first = False
                 elif line[j] == '/' and j < len(line) - 1 and line[j + 1] == '>':
                     next_indent -= 1
-        contents[i] = ' ' * 4 * max(0, indent) + line
-        indent = next_indent
+        contents[i] = ' ' * 4 * max(0, curr_indent) + line
+        curr_indent = next_indent
 
 
 def get_anchor(string):

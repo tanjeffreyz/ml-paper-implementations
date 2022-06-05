@@ -42,9 +42,8 @@ class Readme:
             )
             contents += category_start
 
-            for repo in utils.flatten_dict(self.REPOS[key]):
+            for name, repo in utils.flatten_dict(self.REPOS[key]):
                 owner = repo.get('owner', {}).get('login', '')
-                name = repo.get('name', '')
                 default_branch = repo.get('defaultBranchRef', {}).get('name', '')
                 repo_anchor = get_anchor(f'{owner} {name}')
                 repo_start, repo_middle, repo_end = fill_template(
@@ -148,9 +147,8 @@ class Readme:
             contents.append('</li>')
 
         # Independent items
-        for repo in curr_dict['items']:
+        for name, repo in curr_dict['items']:
             owner = repo.get('owner', {}).get('login', '')
-            name = repo.get('name', '')
             anchor = get_anchor(f'{owner} {name}')
             title = repo.get('header', {}).get('title', '')
             contents.append(
