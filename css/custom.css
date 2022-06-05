@@ -157,7 +157,11 @@ li a {
 
 
 /* Custom Scroll Bars */
-::-webkit-scrollbar {
+.side-bar::-webkit-scrollbar {
+    width: 7.5px;
+}
+
+body::-webkit-scrollbar {
     width: 10px;
 }
 
@@ -169,7 +173,12 @@ body::-webkit-scrollbar-track {
     background: #dadada;
 }
 
-::-webkit-scrollbar-thumb {
+.side-bar::-webkit-scrollbar-thumb {
+    background: #969696;
+    border-radius: 3.75px;
+}
+
+body::-webkit-scrollbar-thumb {
     background: #969696;
     border-radius: 5px;
 }
