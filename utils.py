@@ -33,7 +33,12 @@ def parse_header(contents, max_depth):
             if key in {'title'}:
                 header[key] = value
             elif key in {'images'}:
-                header[key] = [x.strip() for x in value.split(DELIMITER)]
+                items = []
+                for x in value.split(DELIMITER):
+                    cleaned = x.strip()
+                    if cleaned:
+                        items.append(cleaned)
+                header[key] = items
             elif key == 'category':
                 result = []
                 for x in value.split('/'):
