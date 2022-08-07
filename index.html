@@ -27,6 +27,8 @@
                                             Categories
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#architectures-category">Architectures</a></li>
+                                            <li><a class="dropdown-item" href="#techniques-category">Techniques</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -55,7 +57,282 @@
                     </div>
                     <div class="container-fluid col-3 side-bar side-bar-width">
                         <ul class="list-unstyled">
+                            <li class="mb-1">
+                                <button class="btn btn-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#architectures-toc" aria-expanded="true">
+                                    Architectures
+                                </button>
+                                <div class="collapse show" id="architectures-toc">
+                                    <ul class="list-group small">
+                                        <li class="list-group-item mt-1 pe-2 border-0">
+                                            <ul class="list-unstyled">
+                                                <li class="">
+                                                    <button class="btn btn-sm btn-outline-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#architectures-convolutional-neural-networks-toc" aria-expanded="false">
+                                                        Convolutional Neural Networks
+                                                    </button>
+                                                    <div class="collapse" id="architectures-convolutional-neural-networks-toc">
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item mt-1 pe-2 border-0"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-lenet-5">Gradient-Based Learning Applied to Document Recognition (LeNet-5)</a></li>
+                                                            <li class="list-group-item mt-1 pe-2 border-0"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-you-only-look-once">You Only Look Once: Unified, Real-Time Object Detection (YOLOv1)</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="list-group-item mt-1 pe-2 border-0">
+                                            <ul class="list-unstyled">
+                                                <li class="">
+                                                    <button class="btn btn-sm btn-outline-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#architectures-generative-adversarial-networks-toc" aria-expanded="false">
+                                                        Generative Adversarial Networks
+                                                    </button>
+                                                    <div class="collapse" id="architectures-generative-adversarial-networks-toc">
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item mt-1 pe-2 border-0"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-generative-adversarial-networks">Generative Adversarial Networks</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="list-group-item mt-1 pe-2 border-0">
+                                            <ul class="list-unstyled">
+                                                <li class="">
+                                                    <button class="btn btn-sm btn-outline-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#architectures-residual-neural-networks-toc" aria-expanded="false">
+                                                        Residual Neural Networks
+                                                    </button>
+                                                    <div class="collapse" id="architectures-residual-neural-networks-toc">
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item mt-1 pe-2 border-0"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-deep-residual-learning">Deep Residual Learning for Image Recognition</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1 mt-4">
+                                <button class="btn btn-primary shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#techniques-toc" aria-expanded="true">
+                                    Techniques
+                                </button>
+                                <div class="collapse" id="techniques-toc">
+                                    <ul class="list-group small">
+                                        <li class="list-group-item mt-1 pe-2 border-0"><a class="link-dark rounded text-decoration-none" href="#tanjeffreyz-batch-normalization">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a></li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
+                    </div>
+                    <div id="architectures-category" class="container-fluid section mt-3">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-9 clamped-col">
+                                <h2>Architectures</h2>
+                                <hr>
+                                <div class="mt-5 pb-5">
+                                    <a class="repo-anchor" id="tanjeffreyz-lenet-5"></a>
+                                    <h4>Gradient-Based Learning Applied to Document Recognition (LeNet-5)</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/lenet-5">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/lenet-5</b></span>
+                                    </a>
+                                    <div class="mt-1">
+                                        <span class="repo-topic">pytorch</span>
+                                        <span class="repo-topic">mnist</span>
+                                        <span class="repo-topic">deep-learning</span>
+                                        <span class="repo-topic">convolutional-networks</span>
+                                    </div>
+                                    <p>
+                                        PyTorch implementation of LeNet-5 published in "Gradient-Based Learning Applied to Document Recognition" by Y. Lecun, L. Bottou, Y. Bengio, P. Haffner
+                                    </p>
+                                    <div id="tanjeffreyz-lenet-5-carousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#tanjeffreyz-lenet-5-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/lenet-5/main/models/lenet-5/02_02_2022/15_27_14/losses.png" class="d-block" />
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#tanjeffreyz-lenet-5-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#tanjeffreyz-lenet-5-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mt-5 pb-5">
+                                    <a class="repo-anchor" id="tanjeffreyz-you-only-look-once"></a>
+                                    <h4>You Only Look Once: Unified, Real-Time Object Detection (YOLOv1)</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/you-only-look-once">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/you-only-look-once</b></span>
+                                    </a>
+                                    <div class="mt-1">
+                                        <span class="repo-topic">object-detection</span>
+                                        <span class="repo-topic">pytorch</span>
+                                        <span class="repo-topic">yolo</span>
+                                        <span class="repo-topic">computer-vision</span>
+                                    </div>
+                                    <p>
+                                        PyTorch implementation of the YOLO architecture presented in "You Only Look Once: Unified, Real-Time Object Detection" by Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
+                                    </p>
+                                    <div id="tanjeffreyz-you-only-look-once-carousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                        </div>
+                                        <div class="carousel-inner">
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#tanjeffreyz-you-only-look-once-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#tanjeffreyz-you-only-look-once-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mt-5 pb-5">
+                                    <a class="repo-anchor" id="tanjeffreyz-generative-adversarial-networks"></a>
+                                    <h4>Generative Adversarial Networks</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/generative-adversarial-networks">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/generative-adversarial-networks</b></span>
+                                    </a>
+                                    <div class="mt-1">
+                                        <span class="repo-topic">deep-learning</span>
+                                        <span class="repo-topic">generative-adversarial-network</span>
+                                        <span class="repo-topic">pytorch</span>
+                                        <span class="repo-topic">cifar10</span>
+                                        <span class="repo-topic">mnist</span>
+                                    </div>
+                                    <p>
+                                        PyTorch implementation of "Generative Adversarial Networks" by Ian J. Goodfellow, Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, Yoshua Bengio
+                                    </p>
+                                    <div id="tanjeffreyz-generative-adversarial-networks-carousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#tanjeffreyz-generative-adversarial-networks-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#tanjeffreyz-generative-adversarial-networks-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#tanjeffreyz-generative-adversarial-networks-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#tanjeffreyz-generative-adversarial-networks-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/generative-adversarial-networks/main/models/mnist/05_20_2022/14_56_30/samples/final.png" class="d-block" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/generative-adversarial-networks/main/models/cifar10/05_20_2022/11_00_26_increased_momentum/samples/final.png" class="d-block" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/generative-adversarial-networks/main/models/mnist/05_20_2022/14_56_30/metrics.png" class="d-block" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/generative-adversarial-networks/main/models/cifar10/05_20_2022/11_00_26_increased_momentum/metrics.png" class="d-block" />
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#tanjeffreyz-generative-adversarial-networks-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#tanjeffreyz-generative-adversarial-networks-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mt-5 pb-5">
+                                    <a class="repo-anchor" id="tanjeffreyz-deep-residual-learning"></a>
+                                    <h4>Deep Residual Learning for Image Recognition</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/deep-residual-learning">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/deep-residual-learning</b></span>
+                                    </a>
+                                    <div class="mt-1">
+                                        <span class="repo-topic">pytorch</span>
+                                        <span class="repo-topic">cifar-10</span>
+                                        <span class="repo-topic">deep-learning</span>
+                                        <span class="repo-topic">residual-networks</span>
+                                        <span class="repo-topic">convolutional-networks</span>
+                                    </div>
+                                    <p>
+                                        PyTorch implementations of the deep residual networks published in "Deep Residual Learning for Image Recognition" by Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+                                    </p>
+                                    <div id="tanjeffreyz-deep-residual-learning-carousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#tanjeffreyz-deep-residual-learning-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#tanjeffreyz-deep-residual-learning-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/deep-residual-learning/main/results/side_by_side.png" class="d-block" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/deep-residual-learning/main/results/plain_vs_residual.png" class="d-block" />
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#tanjeffreyz-deep-residual-learning-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#tanjeffreyz-deep-residual-learning-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                    <div id="techniques-category" class="container-fluid section mt-3">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-9 clamped-col">
+                                <h2>Techniques</h2>
+                                <hr>
+                                <div class="mt-5 pb-5">
+                                    <a class="repo-anchor" id="tanjeffreyz-batch-normalization"></a>
+                                    <h4>Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</h4>
+                                    <a class="repo-link text-decoration-none" href="https://github.com/tanjeffreyz/batch-normalization">
+                                        <span class="in-line icon me-1">
+                                            <img src="resources/github-icon.png" width="24px" />
+                                        </span>
+                                        <span class="in-line"><b>tanjeffreyz/batch-normalization</b></span>
+                                    </a>
+                                    <div class="mt-1">
+                                        <span class="repo-topic">batch-normalization</span>
+                                        <span class="repo-topic">internal-covariate-shift</span>
+                                        <span class="repo-topic">pytorch</span>
+                                        <span class="repo-topic">mnist</span>
+                                    </div>
+                                    <p>
+                                        PyTorch implementation of batch normalization from "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift" by Sergey Ioffe, Christian Szegedy
+                                    </p>
+                                    <div id="tanjeffreyz-batch-normalization-carousel" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#tanjeffreyz-batch-normalization-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#tanjeffreyz-batch-normalization-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/batch-normalization/main/results/mnist/accuracies.png" class="d-block" />
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="https://raw.githubusercontent.com/tanjeffreyz/batch-normalization/main/results/mnist/activations.png" class="d-block" />
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#tanjeffreyz-batch-normalization-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#tanjeffreyz-batch-normalization-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
                     </div>
                 </div>
             </div>
