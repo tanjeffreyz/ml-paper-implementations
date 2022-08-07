@@ -1,4 +1,4 @@
-<div id="__CAROUSEL_ID__" class="carousel carousel-dark slide" data-bs-ride="carousel">
+<div id="__CAROUSEL_ID__" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-interval="false">
     <div class="carousel-indicators">
 
         __DIVIDER__
