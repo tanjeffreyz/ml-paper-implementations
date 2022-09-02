@@ -40,7 +40,7 @@ jobs:
       run: |
         git config --global user.name 'ml-paper-implementations'
         git config --global user.email 'ml-paper-implementations@tanjeffreyz.github.io'
-        git add *
+        git add * || true
         git commit -m 'Updated webpage' || true
         git push
-        git push -f origin main:github-pages || true
+        git push -f origin main:github-pages
