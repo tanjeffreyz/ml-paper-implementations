@@ -43,4 +43,4 @@ jobs:
         git add *
         git commit -m 'Updated webpage' || true
         git push
-        git push -f origin main:github-pages
+        git push -f origin main:github-pages || true
