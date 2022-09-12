@@ -84,7 +84,7 @@ class Main:
                         (r.get('name'), r)
                     )
             except urllib.error.HTTPError:
-                print(f" !  Invalid URL: '{url}'")
+                print(f" !  README.md not found: '{url}'")
         return filtered
 
     async def get_repos_page(self, owned_cursor, contrib_cursor):

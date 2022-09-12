@@ -126,7 +126,7 @@ class Readme:
                 '__CLASSES__': classes,
                 '__TARGET__': target,
                 '__CATEGORY__': key,
-                '__COLLAPSE__': 'collapse' + (' show' if len(nested) > 0 else '')
+                '__COLLAPSE__': 'collapse'
             }
         )
         contents += group_start
