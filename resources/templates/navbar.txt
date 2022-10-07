@@ -6,7 +6,7 @@
         <ul class="navbar-nav">
             <li class="nav-item ms-4">
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle rounded" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">

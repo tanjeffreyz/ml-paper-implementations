@@ -1,5 +1,5 @@
 <li class="__CLASSES__">
-    <button class="btn btn-primary dropdown-toggle shadow-none align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#__TARGET__" aria-expanded="true">
+    <button class="btn btn-primary dropdown-toggle shadow-none align-items-center" data-bs-toggle="collapse" data-bs-target="#__TARGET__" aria-expanded="true">
         __CATEGORY__
     </button>
     <div class="__COLLAPSE__" id="__TARGET__">
