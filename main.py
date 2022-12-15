@@ -3,24 +3,24 @@ import asyncio
 import heapq
 import urllib.error
 from urllib.request import urlopen
-from client import Client
-from readme import Readme
-from utils import parse_header
+from src.client import Client
+from src.webpage import Webpage
+from src.utils import parse_header
 
 
 class Main:
     TARGET = 'https://api.github.com/graphql'
 
     def __init__(self, id, max_depth=2):
-        self.CLIENT = Client(os.getenv('ACCESS_TOKEN'))
+        self.client = Client(os.getenv('ACCESS_TOKEN'))
         self.ID = id
         self.MAX_DEPTH = max_depth      # Maximum subcategory depth, 'a/b/c' is depth 3
 
     async def run(self):
         repos = await self.get_all_repos()
         filtered = self.filter_repos(repos)
-        readme = Readme(filtered)
-        readme.generate()
+        webpage = Webpage(filtered)
+        webpage.generate()
 
     async def get_all_repos(self):
         """Returns all public repositories the user contributed to."""
@@ -90,11 +90,11 @@ class Main:
     async def get_repos_page(self, owned_cursor, contrib_cursor):
         """Returns one page of repositories."""
 
-        with open('resources/repositories.query', 'r') as file:
+        with open('src/resources/repositories.query', 'r') as file:
             query = file.read()
         query = query.replace('__OWNED_CURSOR__', owned_cursor)
         query = query.replace('__CONTRIBUTED_CURSOR__', contrib_cursor)
-        return await self.CLIENT.request(self.TARGET, query)
+        return await self.client.request(self.TARGET, query)
 
 
 if __name__ == '__main__':

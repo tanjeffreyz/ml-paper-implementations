@@ -18,7 +18,7 @@
             </li>
             <li class="nav-item ms-4 me-4">
                 <a class="repo-link" href="https://github.com/tanjeffreyz/ml-paper-implementations">
-                    <img class="nav-link" src="resources/github-icon.png" height="40px" title="View on GitHub" />
+                    <img class="nav-link" src="src/resources/github-icon.png" height="40px" title="View on GitHub" />
                 </a>
             </li>
         </ul>

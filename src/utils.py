@@ -6,6 +6,9 @@ DELIMITER = ','
 
 
 def parse_header(contents, max_depth):
+    # Filter out empty lines
+    contents = [line for line in contents if line.strip() != '']
+
     i = 0
     while i < len(contents) and '<!--' not in contents[i]:
         i += 1
@@ -83,7 +86,7 @@ def get_anchor(string):
 def load_template(name):
     blocks = []
     lines = []
-    with open(os.path.join('resources', 'templates', f'{name}.txt')) as file:
+    with open(os.path.join('src', 'resources', 'templates', f'{name}.txt')) as file:
         for line in file.readlines():
             line = line.strip()
             if line != '__DIVIDER__':

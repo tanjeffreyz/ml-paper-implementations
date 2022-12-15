@@ -3,7 +3,7 @@
     <h4>__TITLE__</h4>
     <a class="repo-link text-decoration-none" href="https://github.com/__REPO__" target="_blank">
         <span class="in-line icon me-1">
-            <img src="resources/github-icon.png" width="24px" />
+            <img src="src/resources/github-icon.png" width="24px" />
         </span>
         <span class="in-line"><b>__REPO__</b></span>
     </a>

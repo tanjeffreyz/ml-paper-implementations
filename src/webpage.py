@@ -1,14 +1,13 @@
-import utils
-from utils import indent, get_anchor, load_template, fill_template
+from src.utils import indent, get_anchor, load_template, fill_template, flatten_dict
 
 
-class Readme:
+class Webpage:
     def __init__(self, repos):
         self.REPOS = repos['nested']
         self.CATEGORIES = sorted(self.REPOS.keys())     # Top-level categories
 
     def generate(self):
-        print('\n[~] Generating README.md:')
+        print('\n[~] Generating webpage:')
         contents = []
         index_start, index_end = load_template('index')
         contents += index_start
@@ -42,7 +41,7 @@ class Readme:
             )
             contents += category_start
 
-            for name, repo in utils.flatten_dict(self.REPOS[key]):
+            for name, repo in flatten_dict(self.REPOS[key]):
                 owner = repo.get('owner', {}).get('login', '')
                 default_branch = repo.get('defaultBranchRef', {}).get('name', '')
                 repo_anchor = get_anchor(f'{owner} {name}')
@@ -106,7 +105,7 @@ class Readme:
         contents.append('')
         with open('index.html', 'w') as file:
             file.write('\n'.join(contents))
-        print(' ~  Saved result to README.md')
+        print(' ~  Saved result to index.html')
 
     def _nested_dropdown(self, curr_dict, index, key, prev='', depth=0):
         nested = curr_dict['nested']
