@@ -4,11 +4,6 @@
         <div class="col-9 clamped-col">
             <h1 style="padding-bottom: 10px;" align="center">Machine Learning Paper Implementations</h1>
             <h4 style="padding-bottom: 10px;" align="center">by Jeffrey Tan</h4>
-            <p>
-                Below is a collection of my implementations of various machine learning papers.
-                This webpage automatically updates every day using GitHub Actions, so be sure to check
-                back for more!
-            </p>
         </div>
         <div class="col"></div>
     </div>
