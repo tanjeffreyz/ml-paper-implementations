@@ -1,6 +1,6 @@
 <h1 align="center">Machine Learning Paper Implementations</h1>
 
-A collection of my implementations of various machine learning papers. The webpage automatically updates every
+A collection of my implementations of various machine learning papers. The webpage is automatically updated every
 day using GitHub Actions.
 <br>
 
