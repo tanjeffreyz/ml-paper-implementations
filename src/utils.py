@@ -47,7 +47,7 @@ def parse_header(contents, max_depth):
                 for x in value.split('/'):
                     stripped = x.strip()
                     if stripped:
-                        result.append(stripped)
+                        result.append(stripped.title())
                 header[key] = result[:max_depth]
     if all(x is not None for x in header.values()):     # Require all attributes to be present
         return ids, header
